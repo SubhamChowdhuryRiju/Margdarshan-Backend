@@ -1,4 +1,4 @@
-const fs = require("fs").promises; // Use the promise-based version of fs
+const fs = require("fs").promises;
 const path = require("path");
 
 async function getFiles(app) {
@@ -8,7 +8,7 @@ async function getFiles(app) {
     const files = await fs.readdir(currentDir);
 
     files
-      .filter((file) => file.endsWith(".js") && file !== "index.js")
+      .filter((file) => file.endsWith(".js"))
       .forEach((file) => {
         const route = require(path.join(currentDir, file));
 
