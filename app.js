@@ -15,7 +15,9 @@ app.use(express.json()); // for parsing application/json
 // Load all routes dynamically
 require('./routes')(app);
 
-app.listen(PORT, () => {
-    console.log(`Swagger-Docs is running on port http://${SERVER}:${PORT}/margdocs`);
-    console.log(`Server is running on port http://${SERVER}:${PORT}`);
-});
+// app.listen(PORT, () => {
+//     console.log(`Swagger-Docs is running on port http://${SERVER}:${PORT}/margdocs`);
+//     console.log(`Server is running on port http://${SERVER}:${PORT}`);
+// });
+
+module.exports = app;
