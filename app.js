@@ -4,7 +4,7 @@ const swaggerDocs = require("./swagger");
 const db = require("./db");
 require("dotenv").config();
 
-const rootRoute = require("./routes/root");
+const getFiles = require("./index");
 
 const app = express();
 const PORT = process.env.PORT;
@@ -14,10 +14,9 @@ app.use("/margdocs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use(express.json()); // for parsing application/json
 
 // Load all routes dynamically
-require('./routes')(app);
+// require('./routes')(app);
 
-app.use(rootRoute.path, rootRoute.router);
-
+getFiles(app);
 
 app.listen(PORT, () => {
     console.log(`Swagger-Docs is running on port http://${SERVER}:${PORT}/margdocs`);
