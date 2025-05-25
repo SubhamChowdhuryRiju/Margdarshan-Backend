@@ -12,10 +12,6 @@ const SERVER = process.env.SERVER;
 app.use("/margdocs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use(express.json()); // for parsing application/json
 
-app.get("/", (req, res) => {
-    res.send("<h1>Welcome to the Margdarshan Backend System!</h1>");
-})
-
 // Load all routes dynamically
 require('./routes')(app);
 
