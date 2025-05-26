@@ -40,6 +40,6 @@ router.get('/', async (req, res) => {
   
 
 module.exports = {
-  path: '/user',
-  router
+  path: "/user",
+  router,
 };
